@@ -1,14 +1,8 @@
 language: python
 python:
- - "3.5"
-
+  - "3.6"
+install:
+  - pip install requests
 # command to run tests
 script:
- - python -m unittest changetriangletest
-
-before_install:
-  - pip install --user codecov
-after_success:
-  - codecov --file coverage/lcov.info --disable search
- 
- bash <(curl -s https://codecov.io/bash)
+ - python -m unittest  changetriangletest
